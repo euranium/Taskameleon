@@ -6,37 +6,62 @@ body {
 
 #signin{
 	position: absolute;
+	margin-top: -180px;
 	margin-right: 100%;
 }
 
 #login{
 	position: absolute;
+	margin-top: -180px;
 	margin-left: 450px;
 }
 
-#forms{
+#login-form{
 	display: none;
-	margin-top: 50px;
-	text-align:center;
-	padding:10px;
-	color:white;
-	margin-left:auto;
-	margin-right:auto;
-	width:440px;
-	padding:30px;
-	border:1px solid rgba(0,0,0,0.2);
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	-moz-background-clip:padding;
-	-webkit-background-clip:padding-box;
-	background-clip:padding-box;
-	background:rgba(0,0,0,0.8);
-	-moz-box-shadow:0 0 13px 3px rgba(0,0,0,0.5);
-	-webkit-box-shadow:0 0 13px 3px rgba(0,0,0,0.5);
-	box-shadow:0 0 13px 3px rgba(0,0,0,0.5);
-	overflow:hidden
+	position: absolute;
+	left: -77px;
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 8px;
+	margin-bottom: 2%;
+	transition:opacity 1s;
+	-webkit-transition:opacity 1s;
+}
+#triangle{
+	width:0;
+  	border-top:12x solid transparent;
+  	border-right:12px solid transparent;
+  	border-bottom:12px solid #3399cc;
+  	border-left:12px solid transparent;
+  	margin:0 auto;
 } 
+
+#triangle1{
+	width:0;
+  	border-top:12x solid transparent;
+  	border-right:12px solid transparent;
+  	border-bottom:12px solid #3399cc;
+  	border-left:12px solid transparent;
+  	margin:0 auto;
+}
+
+#signin-form{
+	display: none;
+	position: absolute;
+	right: -77px;
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 8px;
+	margin-bottom: 2%;
+	transition:opacity 1s;
+	-webkit-transition:opacity 1s; 
+}
+
+form{
+	border: 1px solid;
+	background: #f0f0f0;
+	padding:6% 4%;
+}
 
 button {
 	margin: 0;
@@ -58,7 +83,7 @@ body {
 	line-height: 1.4em;
 	background: #eaeaea url('bg.png');
 	color: #4d4d4d;
-	width: 500px;
+	width: 550px;
 	margin: 0 auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -76,11 +101,11 @@ input[type="checkbox"] {
 	background: #fff;
 	background: rgba(255, 255, 255, 0.9);
 	/*margin: 130px 0 40px 0; */
-	margin-top: 100px;
-	width: 500px;
+	margin-top: 200px;
 	margin-left: 0px;
+	margin-right: 40px;
 	border: 1px solid #ccc;
-	position: absolute;
+	position: relative;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
@@ -109,7 +134,7 @@ input[type="checkbox"] {
 
 #todoapp h1 {
 	position: absolute;
-	top: -200px;
+	top: -120px;
 	width: 100%;
 	font-size: 70px;
 	font-weight: bold;
@@ -333,10 +358,9 @@ label[for='toggle-all'] {
 #footer {
 	color: #777;
 	padding: 0 15px;
-	margin-top: 30px;
-	left: 30px;
 	position: absolute;
 	right: 0;
+	bottom: -31px;
 	left: 0;
 	height: 20px;
 	z-index: 1;
@@ -404,7 +428,7 @@ label[for='toggle-all'] {
 }
 
 #info {
-	margin: 80px auto 0;
+	margin: 65px auto 0;
 	color: #a6a6a6;
 	font-size: 12px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -586,7 +610,7 @@ hr {
 	}
 
 	.learn-bar #todoapp {
-		width: 500px;
+		width: 550px;
 		margin: 130px auto 40px auto;
 	}
 }

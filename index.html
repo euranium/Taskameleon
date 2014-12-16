@@ -2,31 +2,42 @@
 <html lang='en' data-framework='backbonejs'>
 	<head>
 		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<link rel='stylesheet' href='assets/base.css'>
 	</head>
 	<body>
 		<section id='login'>
 			<img id='login-pic' src='assets/add_user-50.png' alt=login>
 			<figcaption>Signup</figcaption>
-			<div id='login-form'>
-				<form id='loggingin' method='post' action=''>
-					<input id='userName' type='text' placeholder='User Name'><br />
-					<input id='email' type='email' placeholder='email'><br />
-					<input id='password' type='password' placeholder='Password'><br />
-					<input id='password2' type='password' placeholder='Passworld again'><br />
-				</form>
-			</div>
 		</section>
 		<section id='signin'>
 			<img id='signin-pic' src='assets/login-50.png' alt='login'>
 			<figcaption style='margin-left: 10px'>Login</figcaption>
-			<div id='signin-form'>
-				<form id='user-form' method='post' action=''>
-					<input id='userID' type='text' placeholder='User Name'><br />
-					<input id='userPassword' type='password' placeholder='Passworld'><br />
-				</form>
-			</div>
 		</section> 
+		<section id='forms'>
+			<h3>Login</h3>
+			<form id='user-form' method='post' action=''>
+				<p>User Name:</p>
+				<input id='userID' type='text' placeholder='User Name'><br />
+				<p>Password</p>
+				<input id='userPassword' type='password' placeholder='Passworld'><br />
+				<input type='submit' class='btn btn-primary' value='Login'>
+			</form> 
+			<hr>
+			<h3>Signup</h3>
+			<form id='loggingin' method='post' action=''>
+				<p>User Name:</p>
+				<input id='userName' type='text' placeholder='User Name'><br />
+				<p>Email:</p>
+				<input id='email' type='email' placeholder='email'><br />
+				<p>Password:</p>
+				<input id='password' type='password' placeholder='Password'><br />
+				<p>Password Again:</p>
+				<input id='password2' type='password' placeholder='Passworld again'><br />
+				<input type='submit' value='Signup' class='btn btn-primary'>
+			</form> 
+		</section>
 		<section id="todoapp">
 			<header id="header">
 				<h1>todos</h1>
@@ -70,6 +81,7 @@
 	</script>
 	<script src='assets/base.js'></script>
 	<script src='http://code.jquery.com/jquery-1.11.1.min.js'></script>
+	<script src='assets/main.js'></script>
 	<script src='js/lib/backbone/test/vendor/json2.js'></script>
 	<script src='js/lib/backbone/test/vendor/underscore.js'></script>
 	<script src='js/lib/backbone/backbone.js'></script>
