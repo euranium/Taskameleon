@@ -2,9 +2,17 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	/*
+	background: url(busy_background.jpg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover; 
+	*/
 }
 
 #signin{
+	background: none;
 	position: absolute;
 	margin-right: 100%;
 }
@@ -54,10 +62,9 @@ button {
 }
 
 body {
-	 
+	background-image: url('bg.png');
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
-	background: #eaeaea url('bg.png');
 	color: #4d4d4d;
 	width: 500px;
 	margin: 0 auto;
