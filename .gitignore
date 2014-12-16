@@ -1,3 +1,4 @@
 *.swp
 ButtonComponentMorph
 __MACOSX
+js/lib
