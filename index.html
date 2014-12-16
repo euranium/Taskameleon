@@ -1,64 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html lang='en' data-framework='backbonejs'>
 	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<meta name="description" content="">
+		<meta charset='utf-8'>
 		<link rel='stylesheet' href='assets/base.css'>
 	</head>
 	<body>
-		<section id='todoapp'>
-			<header id='header'>
-				<h1>todos</h1>
-				<input id='new-todo' placeholder='What needs to be done?' autofocus>
-			</header>
-			<section id='main'>
-				<input id='toggle-all' type='checkbox'>
-				<label for='toggle-all'>Mark all as complete</label>
-				<ul id='todo-list'></ul>
-			</section>
-			<footer id='footer'></footer>
-		</section>
-		<div id='info'>
-			<p>Double-click to edit a todo</p>
-			<p>Written by <a href='http://rainierharvey.me' target='_blank'>Rainier Harvey</a></p>
-		</div>
-
-		<script type='text/template' id='item-template'>
-			<div class='view'>
-				<input class='toggle' type='checkbox' <%= completed ? 'checked' : '' %>>
-				<label><%= title %></label>
-				<button class='destroy'></button>
+		<section id='login'>
+			<img id='login-pic' src='assets/add_user-50.png' alt=login>
+			<figcaption>Signup</figcaption>
+			<div id='login-form'>
+				<form id='loggingin' method='post' action=''>
+					<input id='userName' type='text' placeholder='User Name'><br />
+					<input id='email' type='email' placeholder='email'><br />
+					<input id='password' type='password' placeholder='Password'><br />
+					<input id='password2' type='password' placeholder='Passworld again'><br />
+				</form>
 			</div>
-			<input class='edit' value='<% title %>'>
+		</section>
+		<section id='signin'>
+			<img id='signin-pic' src='assets/login-50.png' alt='login'>
+			<figcaption style='margin-left: 10px'>Login</figcaption>
+			<div id='signin-form'>
+				<form id='user-form' method='post' action=''>
+					<input id='userID' type='text' placeholder='User Name'><br />
+					<input id='userPassword' type='password' placeholder='Passworld'><br />
+				</form>
+			</div>
+		</section> 
+		<section id="todoapp">
+			<header id="header">
+				<h1>todos</h1>
+				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section id="main">
+				<input id="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul id="todo-list"></ul>
+			</section>
+			<footer id="footer"></footer>
+		</section>
+		<footer id="info">
+			<p>Double-click to edit a todo</p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+		<script type="text/template" id="item-template">
+			<div class="view">
+				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+				<label><%- title %></label>
+				<button class="destroy"></button>
+			</div>
+			<input class="edit" value="<%- title %>">
 		</script>
-		<script type='text/template' id='stats-template'>
-			<span id='todo-count'><strong><%= remaining %> </strong> <%= remaining === 1 ? 'item' : 'items' %>left</span>
-			<ul id='filters'>
+		<script type="text/template" id="stats-template">
+			<span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+			<ul id="filters">
 				<li>
-					<a class='selected' href='#/'>All</a>
+					<a class="selected" href="#/">All</a>
 				</li>
 				<li>
-					<a href='#/active'>Active</a>
+					<a href="#/active">Active</a>
 				</li>
 				<li>
-					<a href='#/completed'>Completed</a>
+					<a href="#/completed">Completed</a>
 				</li>
 			</ul>
 			<% if (completed) { %>
-			<button id='clear-completed'>Clear completed (<% completed %>)</button>
+			<button id="clear-completed">Clear completed (<%= completed %>)</button>
 			<% } %>
-		</script>
-		<script src='http://code.jquery.com/jquery-1.11.1.min.js'></script>
-		<script src='js/lib/backbone/test/vendor/json2.js'></script>
-		<script src='js/lib/backbone/test/vendor/underscore.js'></script>
-		<script src='js/lib/backbone/backbone.js'></script>
-		<script src='js/lib/backbone/examples/backbone.localStorage.js'></script>
-		<script src="js/models/todo.js"></script>  
-		<script src="js/collections/todos.js"></script>
-	    <script src="js/views/todos.js"></script>
-		<script src="js/views/app.js"></script>
-	    <script src="js/routers/router.js"></script>
-		<script src="js/app.js"></script>
+	</script>
+	<script src='assets/base.js'></script>
+	<script src='http://code.jquery.com/jquery-1.11.1.min.js'></script>
+	<script src='js/lib/backbone/test/vendor/json2.js'></script>
+	<script src='js/lib/backbone/test/vendor/underscore.js'></script>
+	<script src='js/lib/backbone/backbone.js'></script>
+	<script src='js/lib/backbone/examples/backbone.localStorage.js'></script>
+	<script src="js/models/todo.js"></script>  
+	<script src="js/collections/todo.js"></script>
+	<script src="js/views/todo-view.js"></script>
+	<script src="js/views/app-view.js"></script>
+	<script src="js/routers/router.js"></script>
+	<script src="js/app.js"></script>
 	</body>
 </html>
