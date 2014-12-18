@@ -33,8 +33,38 @@ $( '#signout').click(function(){
 		$( '#new-todo' ).attr('placeholder', 'What needs to be done?');
 		$( '#login' ).fadeIn(400);
 		$( '#signin' ).fadeIn(400);
+		localStorage.removeItem('loggedIn');
 	});
 });
+function setUser (user){
+	console.log(user);
+	$( '#new-todo' ).attr('placeholder', 'What needs to be done ' + user.names +'?');
+	$( '#login' ).hide();
+	$( '#signin' ).hide();
+	$( '#forms' ).fadeOut(500);
+	$( '#signout' ).show(); 
+	$( '#todoapp' ).fadeIn(500);
+};
+
+$( document ).ready(function (){
+	if (! localStorage.getItem('loggedIn')){
+		return false;
+	}
+	//the json of the saved last user needs to be parsed twice for some reason
+	var jstring = JSON.parse(localStorage.getItem('loggedIn'));
+	console.log(localStorage.getItem('loggedIn'));
+	var newJstring = getUser(jstring);
+	//logs in last user
+	setUser(newJstring)
+});
+
+function getUser ( jstring ){
+	console.log(jstring);
+	var user = {}
+	user.names = jstring['names'];
+	user.emails = jstring['email'];
+	return user;
+}
 
 $( '#user-form' ).submit(function( event ){
 	//prevent page from reloading
@@ -62,13 +92,15 @@ $( '#user-form' ).submit(function( event ){
 		return alert('No user with that email, please enter a valid email');
 	}
 	//if not -1, then get their name from that same possition in the array
-	var name = jstring.name[namePoss];
-	//reset the placehoder text in new-todo form with name
-	$( '#new-todo' ).attr('placeholder', 'What needs to be done ' + name +'?');
-	$( '#login' ).hide();
-	$( '#signin' ).hide();
-	$( '#forms' ).fadeOut(500);
-	$( '#signout' ).show();
+	var name = jstring.names[namePoss];
+	//set token for last user logged in
+	var userID = {}
+	userID.names = name;
+	userID.email = email;
+	var ID = JSON.stringify(userID);
+	localStorage.setItem('loggedIn', ID);
+	//pass on the user id and log them in
+	setUser(userID);
 });
 $( '#log-in' ).submit(function( event ){
 	//prevent page from reloading
@@ -88,26 +120,40 @@ $( '#log-in' ).submit(function( event ){
 	if (email === ''){
 		return alert("Please enter an email. This is for login, I won't save your email, its all on your computures local storage, its just for logging in");
 	}
-	$( '#new-todo' ).attr('placeholder', 'What needs to be done ' + user +'?');
+	//set up the user object
+	var newid = {};
+	newid.names = [user];
+	newid.email = [email]; 
 	//if there is no object 'RainiersBackbone' in local storage
 	if (! localStorage.getItem('RainiersBackbone')){
-		var id = {};
-		id.name = [user];
-		id.email = [email];
-		//set the object into a json string in local memory as a json string
-		return localStorage.setItem('RainiersBackbone', JSON.stringify(id));
+		//know there are no users bc there is no local memory of any
+		//set the object into a json string in local memory as a json string if it hasn't already been done
+		//set a token for the user that persits through reloat
+		localStorage.setItem('loggedIn', JSON.stringify(newid));
+		setUser(newid);
+		console.log('storage empty, adding new user ' + newid);
+		return localStorage.setItem('RainiersBackbone', JSON.stringify(newid));
 	}
 	//get the json object from local storage
 	var id = localStorage.getItem('RainiersBackbone');
 	//parse the json into an object
 	var jstring = JSON.parse(id);
 	//push new user on the 'name' array
-	jstring['name'].push(user);
+	var num = jstring['email'].indexOf(email);
+	if (num !== -1){
+		//if the indexOf does not return -1, someone alreay has the desired email
+		return alert('Sorry, the user name is already taken');
+	}
+	//can set up user and log them in
+	setUser(newid);
+	jstring['names'].push(user);
 	//push new email on the 'email' array
 	jstring['email'].push(email);
+	console.log('nonempty new user ' +newid);
 	//turn object back into a json string
-	newID = JSON.stringify(jstring);
+	//set token for last person logged in
+	localStorage.setItem('loggedIn', JSON.stringify(newid));
 	//write json string into local storage under key 'id'
-	return localStorage.setItem('RainiersBackbone', newID);
+	return localStorage.setItem('RainiersBackbone', JSON.stringify(jstring));
 });
 
