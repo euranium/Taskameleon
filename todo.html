@@ -5,29 +5,34 @@
 		<title>Taskameleon</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 		<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<link rel='stylesheet' href='assets/base.css'>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel='stylesheet' href='assets/style.css'>
 	</head>
 	<body>
 		<section id='login'>
-			<img id='login-pic' src='assets/add_user-50.png' alt=login>
-			<figcaption>Signup</figcaption>
+			<i class="fa fa-sign-in fa-3x"></i>
+			<p>Signup</p>
 		</section>
 		<section id='signin'>
-			<img id='signin-pic' src='assets/login-50.png' alt='login'>
-			<figcaption style='margin-left: 10px'>Login</figcaption>
+			<i class="fa fa-male fa-3x"></i>
+			<p>Login</p>
 		</section> 
+		<section id='signout'>
+			<i class="fa fa-sign-out fa-3x"></i>
+			<p>Signout</p>
+		</section>
 		<section id='forms'>
 			<h3>Login</h3>
 			<form id='user-form' method='post' action=''>
 				<p>User Name:</p>
-				<input id='userID' type='text' placeholder='User Name'><br />
+				<input id='userID' type='email' placeholder='User email'><br />
 				<p>Password</p>
-				<input id='userPassword' type='password' placeholder='Passworld'><br />
-				<input type='submit' class='btn btn-primary' value='Login'>
+				<input id='userPassword' type='password' placeholder='Passworld'><br /><br />
+				<button class='btn btn-primary' id='logger'>Login</button>
 			</form> 
 			<hr>
 			<h3>Signup</h3>
-			<form id='loggingin' method='post' action=''>
+			<form id='log-in' method='post' action=''>
 				<p>User Name:</p>
 				<input id='userName' type='text' placeholder='User Name'><br />
 				<p>Email:</p>
@@ -35,8 +40,8 @@
 				<p>Password:</p>
 				<input id='password' type='password' placeholder='Password'><br />
 				<p>Password Again:</p>
-				<input id='password2' type='password' placeholder='Passworld again'><br />
-				<input type='submit' value='Signup' class='btn btn-primary'>
+				<input id='password2' type='password' placeholder='Passworld again'><br /><br />
+				<button id='signer'  class='btn btn-primary'>Signup</button>
 			</form> 
 		</section>
 		<section id="todoapp">
@@ -52,8 +57,8 @@
 			<footer id="footer"></footer>
 		</section>
 		<footer id="info">
-			<p>Double-click to edit a todo</p>
-			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			<p id='top'>Double-click to edit a todo</p>
+			<p id='bot'>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
 		<script type="text/template" id="item-template">
 			<div class="view">
@@ -81,7 +86,7 @@
 			<% } %>
 	</script>
 	<script src='assets/base.js'></script>
-	<script src='http://code.jquery.com/jquery-1.11.1.min.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src='assets/main.js'></script>
 	<script src='http://underscorejs.org/underscore-min.js'></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone.js'></script>
