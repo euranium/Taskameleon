@@ -2,7 +2,7 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	background: url(busy_background.jpg) no-repeat center center fixed; 
+	background: url(mini_busy_background.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -34,6 +34,11 @@ i {
 #signout{
 	display: none;
 	position: absolute;
+}
+#exit {
+	position: absolute;
+	margin-left: 180px;
+	margin-top: -30px;
 }
 
 #forms{

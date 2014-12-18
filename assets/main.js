@@ -1,13 +1,17 @@
 //shows login stuff on mouse over of login icon
 $('#login').mouseover(function(){
+	$( '#login' ).hide();
+	$( '#signin' ).hide(); 
 	//fades out todoapp
 	$( '#todoapp' ).fadeOut( 500, function(){
 		//then fades in the forms
 		$( '#forms' ).fadeIn( 500, function(){
 			//when your mouse leaves form page, it dispears
-			$('#forms').mouseleave(function(){
+			$('#exit').click(function(){
 				//the forms fade out
 				$('#forms').fadeOut(500, function(){
+					$( '#login' ).show();
+					$( '#signin' ).show(); 
 					//and the todoapp fades back in
 					$('#todoapp').fadeIn(500)
 				});
@@ -17,10 +21,14 @@ $('#login').mouseover(function(){
 });
 //same stuff as above, happens when mouse over signin icon
 $('#signin').mouseover(function(){
+	$( '#login' ).hide();
+	$( '#signin' ).hide();
 	$( '#todoapp' ).fadeOut( 500, function(){
 		$( '#forms' ).fadeIn( 500, function(){
-			$('#forms').mouseleave(function(){
+			$('#exit').click(function(){
 				$('#forms').fadeOut(500, function(){
+					$( '#login' ).show();
+					$( '#signin' ).show();
 					$('#todoapp').fadeIn(500)
 				});
 			});
