@@ -135,6 +135,7 @@ input[type="checkbox"] {
 }
 
 #todoapp h1 {
+	font-family: 'Sans Serif';
 	position: absolute;
 	top: -200px;
 	width: 100%;
