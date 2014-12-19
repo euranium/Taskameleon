@@ -41,6 +41,7 @@ $( '#signout').click(function(){
 		$( '#new-todo' ).attr('placeholder', 'What needs to be done?');
 		$( '#login' ).fadeIn(400);
 		$( '#signin' ).fadeIn(400);
+		$( '#forms' ).hide();
 		localStorage.removeItem('loggedIn');
 	});
 });
