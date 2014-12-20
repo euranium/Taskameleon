@@ -1,7 +1,7 @@
-html,
 body {
 	margin: 0;
 	padding: 0;
+	width: auto;
 	background: url(mini_busy_background.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -30,7 +30,7 @@ i {
 
 #login{
 	position: absolute;
-	margin-left: 275px;
+	margin-left: 87%;
 }
 #login p{
 	position: relative;
@@ -51,7 +51,7 @@ i {
 	color:white;
 	margin-left:auto;
 	margin-right:auto;
-	width:320px;
+	width:100%;
 	padding:30px;
 	border:1px solid rgba(0,0,0,0.2);
 	-moz-border-radius:5px;
@@ -92,7 +92,7 @@ body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	color: #4d4d4d;
-	width: 320px;
+	width: 100%;
 	margin: 0 auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -111,7 +111,7 @@ input[type="checkbox"] {
 	background: rgba(255, 255, 255, 0.9);
 	/*margin: 130px 0 40px 0; */
 	margin-top: 100px;
-	width: 315px;
+	width: 100%;
 	margin-left: 0px;
 	border: 1px solid #ccc;
 	position: absolute;
@@ -370,7 +370,7 @@ label[for='toggle-all'] {
 	position: absolute;
 	right: 0;
 	left: 0;
-	height: 60px;
+	height: 100px;
 	z-index: -1;
 	text-align: center;
 }
@@ -378,10 +378,10 @@ label[for='toggle-all'] {
 #footer:before {
 	content: '';
 	position: absolute;
-	margin-top: -120px;
+	margin-top: -150px;
 	right: 0;
 	left: 0;
-	height: 120px;
+	height: 150px;
 	z-index: -1;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
 				0 6px 0 -3px rgba(255, 255, 255, 0.8),
@@ -394,7 +394,7 @@ label[for='toggle-all'] {
 	text-align: left;
 	margin-top: 20px;
 	position: relative;
-	width: 320px;
+	width: 100%;
 }
 
 #filters {
@@ -437,7 +437,7 @@ label[for='toggle-all'] {
 }
 
 #info {
-	width: 319px;
+	width: 100%;
 	margin-top: 80px;
 	color: #f5f5dc;
 	font-size: 19px;
