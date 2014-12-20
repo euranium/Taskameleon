@@ -46,7 +46,6 @@ $( '#signout').click(function(){
 	});
 });
 function setUser (user){
-	console.log(user);
 	$( '#new-todo' ).attr('placeholder', 'What needs to be done ' + user.names +'?');
 	$( '#login' ).hide();
 	$( '#signin' ).hide();
@@ -61,14 +60,12 @@ $( document ).ready(function (){
 	}
 	//the json of the saved last user needs to be parsed twice for some reason
 	var jstring = JSON.parse(localStorage.getItem('loggedIn'));
-	console.log(localStorage.getItem('loggedIn'));
 	var newJstring = getUser(jstring);
 	//logs in last user
 	setUser(newJstring)
 });
 
 function getUser ( jstring ){
-	console.log(jstring);
 	var user = {}
 	user.names = jstring['names'];
 	user.emails = jstring['email'];
@@ -83,9 +80,6 @@ $( '#user-form' ).submit(function( event ){
 	//if user did not enter an email 
 	if ( user === ''){
 		return alert('Please enter a user name');
-	}
-	if ( pass !== undefined){
-		alert('The password is not required and will not be saved because I am saving to local storage, which is not secure');
 	}
 	if (! localStorage.getItem('RainiersBackbone')){
 		return alert('There are no users stored in local memory, please create an account');
@@ -104,8 +98,8 @@ $( '#user-form' ).submit(function( event ){
 	var name = jstring.names[namePoss];
 	//set token for last user logged in
 	var userID = {}
-	userID.names = name;
-	userID.email = email;
+	userID.names = [name];
+	userID.emails = [user];
 	var ID = JSON.stringify(userID);
 	localStorage.setItem('loggedIn', ID);
 	//pass on the user id and log them in
@@ -140,7 +134,6 @@ $( '#log-in' ).submit(function( event ){
 		//set a token for the user that persits through reloat
 		localStorage.setItem('loggedIn', JSON.stringify(newid));
 		setUser(newid);
-		console.log('storage empty, adding new user ' + newid);
 		return localStorage.setItem('RainiersBackbone', JSON.stringify(newid));
 	}
 	//get the json object from local storage
@@ -158,7 +151,6 @@ $( '#log-in' ).submit(function( event ){
 	jstring['names'].push(user);
 	//push new email on the 'email' array
 	jstring['email'].push(email);
-	console.log('nonempty new user ' +newid);
 	//turn object back into a json string
 	//set token for last person logged in
 	localStorage.setItem('loggedIn', JSON.stringify(newid));
