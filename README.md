@@ -1,3 +1,3 @@
-A backbone.js and jQuery based todo application. The todo MVC part is based on the [todoMVC][]. Information is stored as JSON strings in local storage. No passwords are stored for security reasons. Users emails and names are stored only in local storage, and are never sent to any database. The application is hosted on [my site][].
+A backbone.js and jQuery based todo application. The todo MVC part is based on the [todoMVC][]. Information is stored as JSON strings in local storage. No passwords are stored for security reasons. Users emails and names are stored only in local storage, and are never sent to any database. The application is hosted on [my site][]. I chose to use local storage instead of cookes because of the negative attitude people have towards cookies, the fact some people block all of them, and because I don't like cookies (but I do love real cookies).
 [todoMVC]: http://todomvc.com/
 [my site]: http://rainierharvey.me/backbone/todo.html
