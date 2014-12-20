@@ -31,6 +31,10 @@ i {
 	position: absolute;
 	margin-left: 275px;
 }
+#login p{
+	position: relative;
+	right: 10px;
+}
 #signout{
 	display: none;
 	position: absolute;
@@ -264,7 +268,7 @@ label[for='toggle-all'] {
 
 #todo-list li.editing .edit {
 	display: block;
-	width: 506px;
+	width: 300px;
 	padding: 13px 17px 12px 17px;
 	margin: 0 0 0 43px;
 }
@@ -362,7 +366,6 @@ label[for='toggle-all'] {
 
 #footer {
 	padding: 0 15px;
-	margin-top: -30px;
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -374,27 +377,27 @@ label[for='toggle-all'] {
 #footer:before {
 	content: '';
 	position: absolute;
+	margin-top: -120px;
 	right: 0;
-	bottom: 31px;
 	left: 0;
-	height: 50px;
+	height: 120px;
 	z-index: -1;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
 				0 6px 0 -3px rgba(255, 255, 255, 0.8),
 				0 7px 1px -3px rgba(0, 0, 0, 0.3),
-				0 43px 0 -6px rgba(255, 255, 255, 0.8),
-				0 44px 2px -6px rgba(0, 0, 0, 0.2);
+				0 63px 0 -6px rgba(255, 255, 255, 0.8),
+				0 64px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
 #todo-count {
 	text-align: left;
+	margin-top: 20px;
 	position: relative;
-	top: 30px;
+	width: 320px;
 }
 
 #filters {
 	margin: 0;
-	margin-top: 30px;
 	padding: 0;
 	list-style: none;
 	right: 0;
@@ -433,8 +436,9 @@ label[for='toggle-all'] {
 }
 
 #info {
-	margin: 80px auto;
-	margin-left: -20px;
+	width: 320px;
+	margin-left: -10px;
+	margin-top: 80px;
 	color: #f5f5dc;
 	font-size: 19px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
