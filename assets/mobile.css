@@ -25,6 +25,7 @@ i {
 #signin{
 	position: absolute;
 	margin-right: 100%;
+	margin-left: 10px;
 }
 
 #login{
@@ -110,7 +111,7 @@ input[type="checkbox"] {
 	background: rgba(255, 255, 255, 0.9);
 	/*margin: 130px 0 40px 0; */
 	margin-top: 100px;
-	width: 320px;
+	width: 315px;
 	margin-left: 0px;
 	border: 1px solid #ccc;
 	position: absolute;
@@ -436,8 +437,7 @@ label[for='toggle-all'] {
 }
 
 #info {
-	width: 320px;
-	margin-left: -10px;
+	width: 319px;
 	margin-top: 80px;
 	color: #f5f5dc;
 	font-size: 19px;
