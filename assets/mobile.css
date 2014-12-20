@@ -151,7 +151,7 @@ input[type="checkbox"] {
 	text-align: center;
 	color: yellow;
 	color: rgba(255, 255, 255);
-	text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+	text-shadow: -1px -1px rgba(0, 0, 0, 0.5);
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	-ms-text-rendering: optimizeLegibility;
@@ -478,7 +478,7 @@ label[for='toggle-all'] {
 	}
 
 	#toggle-all {
-		top: -56px;
+		top: -46px;
 		left: -15px;
 		width: 65px;
 		height: 41px;
