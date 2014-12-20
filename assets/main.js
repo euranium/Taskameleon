@@ -1,3 +1,4 @@
+
 //shows login stuff on mouse over of login icon
 $('#login').mouseover(function(){
 	$( '#login' ).hide();
@@ -79,10 +80,10 @@ $( '#user-form' ).submit(function( event ){
 	var pass = $('userPassword').val();
 	//if user did not enter an email 
 	if ( user === ''){
-		return alert('Please enter a user name');
+		return swal('Please enter a user name', '', 'error');
 	}
 	if (! localStorage.getItem('RainiersBackbone')){
-		return alert('There are no users stored in local memory, please create an account');
+		return swal('Please create an account', 'There are no users stored in local memory', 'error');
 	}
 	//get the json string under name 'RainersBackbone' from local storage
 	var id= localStorage.getItem('RainiersBackbone');
@@ -92,7 +93,7 @@ $( '#user-form' ).submit(function( event ){
 	var namePoss = jstring.email.indexOf(user)
 	//if index = -1 then there is no email in array
 	if (namePoss === -1){
-		return alert('No user with that email, please enter a valid email');
+		return swal('please enter a valid email','No user with that email', 'error');
 	}
 	//if not -1, then get their name from that same possition in the array
 	var name = jstring.names[namePoss];
@@ -114,14 +115,14 @@ $( '#log-in' ).submit(function( event ){
 	if (user === ''){
 		//if the use did not also enter an email
 		if (email === ''){
-			return alert("please enter a name and email. I wont send you any email, this isn't even hooked up to a data base, its just for loggin in localy");
+			return swal("please enter a name and email", "I wont send you any email, this isn't even hooked up to a data base, its just for loggin in localy", 'error');
 		}
 		//if user only did not enter a name
-		alert("please enter a name, this will not be sent to me, it's kept in local storage on your computer");
+		return swal("please enter a name", "this will not be sent to me, it's kept in local storage on your computer", 'error');
 	}
 	//if user only did not enter an email
 	if (email === ''){
-		return alert("Please enter an email. This is for login, I won't save your email, its all on your computures local storage, its just for logging in");
+		return swal("Please enter an email", "This is for login, I won't save your email, its all on your computures local storage, its just for logging in", 'error');
 	}
 	//set up the user object
 	var newid = {};
@@ -144,7 +145,7 @@ $( '#log-in' ).submit(function( event ){
 	var num = jstring['email'].indexOf(email);
 	if (num !== -1){
 		//if the indexOf does not return -1, someone alreay has the desired email
-		return alert('Sorry, the user name is already taken');
+		return swal('Sorry, the user name is already taken');
 	}
 	//can set up user and log them in
 	setUser(newid);
