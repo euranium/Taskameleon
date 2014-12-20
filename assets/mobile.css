@@ -1,3 +1,4 @@
+html,
 body {
 	margin: 0;
 	padding: 0;
@@ -28,16 +29,13 @@ i {
 
 #login{
 	position: absolute;
-	margin-left: 463px;
+	margin-left: 275px;
 }
 #signout{
 	display: none;
 	position: absolute;
 }
 #exit {
-	position: absolute;
-	margin-left: 180px;
-	margin-top: -30px;
 }
 
 #forms{
@@ -48,7 +46,7 @@ i {
 	color:white;
 	margin-left:auto;
 	margin-right:auto;
-	width:440px;
+	width:320px;
 	padding:30px;
 	border:1px solid rgba(0,0,0,0.2);
 	-moz-border-radius:5px;
@@ -89,7 +87,7 @@ body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	color: #4d4d4d;
-	width: 500px;
+	width: 320px;
 	margin: 0 auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -108,7 +106,7 @@ input[type="checkbox"] {
 	background: rgba(255, 255, 255, 0.9);
 	/*margin: 130px 0 40px 0; */
 	margin-top: 100px;
-	width: 500px;
+	width: 320px;
 	margin-left: 0px;
 	border: 1px solid #ccc;
 	position: absolute;
@@ -143,7 +141,7 @@ input[type="checkbox"] {
 	position: absolute;
 	top: -200px;
 	width: 100%;
-	font-size: 70px;
+	font-size: 50px;
 	font-weight: bold;
 	text-align: center;
 	color: yellow;
@@ -183,8 +181,9 @@ input[type="checkbox"] {
 .edit {
 	position: relative;
 	margin: 0;
+	margin-left: 40px;
 	width: 100%;
-	font-size: 24px;
+	font-size: 18px;
 	font-family: inherit;
 	line-height: 1.4em;
 	border: 0;
@@ -205,7 +204,6 @@ input[type="checkbox"] {
 }
 
 #new-todo {
-	padding: 16px 16px 16px 60px;
 	border: none;
 	background: rgba(0, 0, 0, 0.02);
 	z-index: 2;
@@ -251,7 +249,7 @@ label[for='toggle-all'] {
 
 #todo-list li {
 	position: relative;
-	font-size: 24px;
+	font-size: 18px;
 	border-bottom: 1px dotted #ccc;
 }
 
@@ -363,16 +361,13 @@ label[for='toggle-all'] {
 }
 
 #footer {
-	color: #777;
 	padding: 0 15px;
-	margin-top: 12px;
-	margin-bottom: 12px;
-	left: 30px;
+	margin-top: -30px;
 	position: absolute;
 	right: 0;
 	left: 0;
-	height: 20px;
-	z-index: 1;
+	height: 60px;
+	z-index: -1;
 	text-align: center;
 }
 
@@ -392,17 +387,19 @@ label[for='toggle-all'] {
 }
 
 #todo-count {
-	float: left;
 	text-align: left;
+	position: relative;
+	top: 30px;
 }
 
 #filters {
 	margin: 0;
+	margin-top: 30px;
 	padding: 0;
 	list-style: none;
-	position: absolute;
 	right: 0;
 	left: 0;
+	text-align: center;
 }
 
 #filters li {
@@ -420,7 +417,6 @@ label[for='toggle-all'] {
 }
 
 #clear-completed {
-	float: right;
 	position: relative;
 	line-height: 20px;
 	text-decoration: none;
@@ -437,7 +433,8 @@ label[for='toggle-all'] {
 }
 
 #info {
-	margin: 80px auto 0;
+	margin: 80px auto;
+	margin-left: -20px;
 	color: #f5f5dc;
 	font-size: 19px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
