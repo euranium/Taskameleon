@@ -1,62 +1,72 @@
-
 //shows login stuff on mouse over of login icon
-$('#login').mouseover(function(){
-	$( '#login' ).hide();
-	$( '#signin' ).hide(); 
+$('#login').mouseover(function () {
+	'use strict';
+	$('#login').hide();
+	$('#signin').hide();
 	//fades out todoapp
-	$( '#todoapp' ).fadeOut( 500, function(){
+	$('#todoapp').fadeOut(500, function () {
 		//then fades in the forms
-		$( '#forms' ).fadeIn( 500, function(){
+		$('#forms').fadeIn(500, function () {
 			//when your mouse leaves form page, it dispears
-			$('#exit').click(function(){
+			$('#exit').click(function () {
 				//the forms fade out
-				$('#forms').fadeOut(500, function(){
-					$( '#login' ).show();
-					$( '#signin' ).show(); 
+				$('#forms').fadeOut(500, function () {
+					$('#login').show();
+					$('#signin').show();
 					//and the todoapp fades back in
-					$('#todoapp').fadeIn(500)
+					$('#todoapp').fadeIn(500);
 				});
 			});
 		});
 	});
 });
 //same stuff as above, happens when mouse over signin icon
-$('#signin').mouseover(function(){
-	$( '#login' ).hide();
-	$( '#signin' ).hide();
-	$( '#todoapp' ).fadeOut( 500, function(){
-		$( '#forms' ).fadeIn( 500, function(){
-			$('#exit').click(function(){
-				$('#forms').fadeOut(500, function(){
-					$( '#login' ).show();
-					$( '#signin' ).show();
-					$('#todoapp').fadeIn(500)
+$('#signin').mouseover(function () {
+	'use strict';
+	$('#login').hide();
+	$('#signin').hide();
+	$('#todoapp').fadeOut(500, function () {
+		$('#forms').fadeIn(500, function () {
+			$('#exit').click(function () {
+				$('#forms').fadeOut(500, function () {
+					$('#login').show();
+					$('#signin').show();
+					$('#todoapp').fadeIn(500);
 				});
 			});
 		});
 	});
 });
 
-$( '#signout').click(function(){
-	$( '#signout' ).fadeOut( 400, function(){
-		$( '#new-todo' ).attr('placeholder', 'What needs to be done?');
-		$( '#login' ).fadeIn(400);
-		$( '#signin' ).fadeIn(400);
-		$( '#forms' ).hide();
+$('#signout').click(function () {
+	'use strict';
+	$('#signout').fadeOut(400, function () {
+		$('#new-todo').attr('placeholder', 'What needs to be done?');
+		$('#login').fadeIn(400);
+		$('#signin').fadeIn(400);
+		$('#forms').hide();
 		localStorage.removeItem('loggedIn');
 	});
 });
 function setUser (user){
-	$( '#new-todo' ).attr('placeholder', 'What needs to be done ' + user.names +'?');
-	$( '#login' ).hide();
-	$( '#signin' ).hide();
-	$( '#forms' ).fadeOut(500);
-	$( '#signout' ).show(); 
-	$( '#todoapp' ).fadeIn(500);
+	'use strict';
+	$('#new-todo').attr('placeholder', 'What needs to be done ' + user.names + '?');
+	$('#login').hide();
+	$('#signin').hide();
+	$('#forms').fadeOut(500);
+	$('#signout').show();
+	$('#todoapp').fadeIn(500);
 };
 
-$( document ).ready(function (){
-	if (! localStorage.getItem('loggedIn')){
+function getUser(jstring) {
+	'use strict';
+	var user = {};
+	user.names = jstring['names'];
+	user.emails = jstring['email'];
+	return user;
+}
+$(document).ready(function () {
+	if (! localStorage.getItem('loggedIn')) {
 		return false;
 	}
 	//the json of the saved last user needs to be parsed twice for some reason
@@ -66,12 +76,6 @@ $( document ).ready(function (){
 	setUser(newJstring)
 });
 
-function getUser ( jstring ){
-	var user = {}
-	user.names = jstring['names'];
-	user.emails = jstring['email'];
-	return user;
-}
 
 $( '#user-form' ).submit(function( event ){
 	//prevent page from reloading
